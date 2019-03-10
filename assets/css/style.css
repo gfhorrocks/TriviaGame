@@ -1,6 +1,7 @@
 body{
     background-image: url("../images/background.jpg");
     background-repeat: repeat;
+    
 }
 
 .jumbotron{
@@ -8,6 +9,7 @@ body{
     height: 700px;
     background: lightgrey;
     color: grey;
+    height: fit-content;
 }
 
 #title{
@@ -16,6 +18,14 @@ body{
     font-size: 60px;
 }
 
-#mainContent{
-    
+#mainContent,#timerDiv,#questionDiv,#choicesDiv{
+    text-align: center;
+    justify-content: center;
+    margin: 1em 0em 1em 0em;
+    font-size: 24pt;
+    display: block;
+}
+
+.answer:hover{
+    background-color: white;
 }

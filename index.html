@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>PC Trivia Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
+
 <body>
     <div class="jumbotron col-10 offset-1">
         <div class="row justify-content-center">
             <h1 id="title">PC Trivia Game</h1>
         </div>
 
-        <div class="row justify-content-center" id="mainContent"> 
-            <button id="startButton">START</button>
+        <div id="mainContent">
+            <button  id="startButton">START</button>
+            <div class="row" id="timerDiv">
+                <h2>TIMER PLACEHOLDER</h2>
+            </div>
+            <div class="row" id="questionDiv">
+                <h2></h2>
+            </div>
+            <div class="row" id="choicesDiv">
+                <h2></h2>
+            </div>
         </div>
-    </div>
 
+    </div>
     <script src="assets/javascript/app.js"></script>
 </body>
+
 </html>
