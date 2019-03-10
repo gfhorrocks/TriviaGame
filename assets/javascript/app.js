@@ -77,12 +77,10 @@ var game = {
         if ($(this).attr("choiceIndex") == game.correctAnswer[q]) {
             q++;                                             //Goes to "next" question
             correct++;
-            // result = true;                                //Increases correct answer count
             game.drawAnswer(true);                           //Draws the answer on the screen
             game.drawData();                                 //Draws the new question and answers on the screen
         }
         else {
-            // result = false;
             q++;
             game.drawAnswer(false);
             game.drawData();
