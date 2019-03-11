@@ -44,14 +44,14 @@ var game = {
         "eggs, ham", "password, 123456", "letmein, pleaseletmein", "abcdefg, 987654",
         "ibm xt", "sun solaris", "altair 8800", "apple ii"],
 
-    startTimer: function () {
+    startTimer: function () {                                //STARTS TIMER
         if (!game.clockRunning) {
             intervalID = setInterval(game.countDown, 1000);
             game.clockRunning = true;
         }
     },
 
-    countDown: function () {
+    countDown: function () {                                 //COUNTS DOWN 1
         $("#timerDiv").text("Time remaining: " + time);
         time--;
 
@@ -62,7 +62,7 @@ var game = {
 
     },
 
-    stopTimer: function () {
+    stopTimer: function () {                                 //STOPS TIMER
         clearInterval(intervalID);
         game.clockRunning = false;
     },
@@ -104,8 +104,8 @@ var game = {
                 break;
             }
         }
-        $("#choicesDiv").html("<img src='assets/images/" + game.imagePath[q] + "'/>");   //Output image of answer
 
+        $("#choicesDiv").html("<img src='assets/images/" + game.imagePath[q] + "'/>");   //Output image of answer
     },
 
     //Checks the correctAnswer string to see if it matches the choiceIndex of what you're clicking on
