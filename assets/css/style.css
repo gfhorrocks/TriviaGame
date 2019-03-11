@@ -29,3 +29,11 @@ body{
 .answer:hover{
     background-color: white;
 }
+
+img{
+    border-style: solid;
+    border-width: 2px;
+    border-color: gray;
+    padding: 2px;
+    max-width: 400px;
+}
