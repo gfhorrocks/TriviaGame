@@ -1,6 +1,6 @@
 var q = 0;
 var correct = 0;
-var time = 30;
+var time = 60;
 var intervalID;
 
 var game = {
@@ -28,7 +28,7 @@ var game = {
         "q7.jpg",
         "q8.jpg",
         "q9.jpg",
-        "q10.jpeg",],
+        "q10.jpeg"],
 
     clockRunning: false,
 
@@ -51,20 +51,19 @@ var game = {
         }
     },
 
+    stopTimer: function () {                                 //STOPS TIMER
+        clearInterval(intervalID);
+        game.clockRunning = false;
+    },
+
     countDown: function () {                                 //COUNTS DOWN 1
         $("#timerDiv").text("Time remaining: " + time);
         time--;
 
-        if (time === 0) {
-            game.stopTimer();
+        if (time === -1) {
             game.endGame();
         }
 
-    },
-
-    stopTimer: function () {                                 //STOPS TIMER
-        clearInterval(intervalID);
-        game.clockRunning = false;
     },
 
     drawData: function () {
@@ -94,6 +93,7 @@ var game = {
         $("#choicesDiv").empty();                            //Clears choices
 
         game.stopTimer();
+
         switch (result) {
             case true: {
                 $("#questionDiv").text("Correct!");
@@ -114,32 +114,40 @@ var game = {
         if ($(this).attr("choiceIndex") == game.correctAnswer[q]) {
             correct++;
             game.drawAnswer(true);                           //Draws the answer on the screen
-            setTimeout(game.drawData, 7000);                  //Waits 7 seconds before drawing new question
+            setTimeout(game.drawData, 500);                  //Waits 7 seconds before drawing new question
         }
         else {
             game.drawAnswer(false);
-            setTimeout(game.drawData, 7000);
+            setTimeout(game.drawData, 500);
         }
+
         q++;
+
+        if(q===10){
+            game.endGame();
+        }
 
     },
 
-    endgame: function () {
-        $("#questionDiv").empty();                           //Clears question
-        $("#choicesDiv").empty();                            //Clears choices\
-        $("#startButton").show();
+    endGame: function () {
 
-        if (time === 0) {
+        game.stopTimer();
+
+        $("#questionDiv").empty();                           //Clears question
+        $("#choicesDiv").empty();                            //Clears choices
+        $("#startButton").show();
+        $("#timerDiv").empty();
+
+        if (time === -1) {
             $("#questionDiv").text("Sorry, but you ran out of time, better luck Next Time!");
         }
         else {
-            $("questionDiv").text("Game complete! " + "You answered " + correct + " out of 10 questions correctly!");
+            $("#questionDiv").text("Game complete! " + "You answered " +correct + " out of 10 questions correctly!");
         }
 
         correct = 0;    //resetting values for new game
-        time = 30;
+        time = 60;
         q = 0;
-
     }
 };
 
