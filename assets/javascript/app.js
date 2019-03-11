@@ -19,7 +19,7 @@ var game = {
     //Makes it simpler to check for correct answer instead of comparing string (could do string comparison if it put answers in random order)
     correctAnswer: [1, 0, 2, 3, 1, 0, 2, 0, 1, 3],
 
-    imagePath: ["q1.jpg",
+    imagePath: ["q1.jpg",                                     //Images for answers
         "q2.jpeg",
         "q3.jpg",
         "q4.jpg",
@@ -120,10 +120,10 @@ var game = {
         q++;                                                 //Goes to next Question index
 
         if (q === game.question.length) {
-            game.endGame();
+            setTimeout(game.endGame,5000);
         }
         else {
-            setTimeout(game.drawData, 7000);                 //Waits 7 seconds before drawing new question
+            setTimeout(game.drawData,5000);                 //Waits 7 seconds before drawing new question
         }
     },
 
