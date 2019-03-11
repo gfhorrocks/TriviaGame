@@ -66,7 +66,7 @@ var game = {
 
     },
 
-    drawData: function () {
+    drawData: function() {
 
         var index = 0;
 
@@ -114,11 +114,11 @@ var game = {
         if ($(this).attr("choiceIndex") == game.correctAnswer[q]) {
             correct++;
             game.drawAnswer(true);                           //Draws the answer on the screen
-            setTimeout(game.drawData, 500);                  //Waits 7 seconds before drawing new question
+            setTimeout(game.drawData, 5000);                  //Waits 7 seconds before drawing new question
         }
         else {
             game.drawAnswer(false);
-            setTimeout(game.drawData, 500);
+            setTimeout(game.drawData, 5000);
         }
 
         q++;
@@ -153,5 +153,3 @@ var game = {
 
 $(document).on("click", ".answer", game.checkifCorrect);           //When answer selection is clicked, first check to see if it's correct
 $(document).on("click", "#startButton", game.drawData);            //When Start button is clicked, start the game with drawData function
-
-
