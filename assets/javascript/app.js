@@ -1,6 +1,6 @@
 var q = 0;
 var correct = 0;
-var time = 60;
+var time = 90;
 var intervalID;
 
 var game = {
@@ -144,7 +144,7 @@ var game = {
         }
 
         correct = 0;                                         //resetting values for new game
-        time = 60;
+        time = 90;
         q = 0;
     }
 };
